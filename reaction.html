@@ -25,8 +25,8 @@
   <button type="button" class="btn btn-secondary" onclick="recordReact()">React</button>
     
   <script> 
-  var countOut = document.getElementById("count")
-  var yourTimeOut = document.getElementById("yourTime")
+  var countdownOutput = document.getElementById("count")
+  var yourTimerOutput = document.getElementById("yourTime")
 
   let myTime = undefined
   let buttonTime = undefined
@@ -40,7 +40,7 @@
     for(let i=0;i<=randTimer;i++)
     {
       setTimeout(() => {
-        countOut.innerHTML = "Count: " + i
+        countdownOutput.innerHTML = "Count: " + i
         //console.log("Count: " + i)
       }, 
         ((randTimer-i)*1000)
@@ -49,11 +49,11 @@
     }
     setTimeout(function() {
       if (myTime === undefined) {
-        yourTimeOut.innerHTML = "Too Slow"
+        yourTimerOutput.innerHTML = "Too Slow"
       } else {
         buttonTime = Date.now()
         elapsedTime = -(myTime - buttonTime)
-        yourTimeOut.innerHTML = "Time was " + elapsedTime + "ms"
+        yourTimerOutput.innerHTML = "Time was " + elapsedTime + "ms"
       }
     }, randTimer*1000)
 
